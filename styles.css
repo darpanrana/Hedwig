@@ -1,0 +1,183 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Gift Box */
+.gift-box {
+    font-size: 80px;
+    cursor: pointer;
+    animation: bounce 1s infinite;
+}
+
+.gift-box:hover {
+    transform: scale(1.1);
+}
+
+/* Wishes */
+.wishes {
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 2s;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: #ffcccb;
+}
+
+.photo {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.photo img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.photo p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Balloons and Messages */
+.balloons-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.balloon-message {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: floatUp 10s linear infinite;
+}
+
+/* Balloon */
+.balloon {
+    width: 100px;
+    height: 140px;
+    background: radial-gradient(circle at bottom, #ffd1dc, #ff6f91);
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.balloon:before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: 35px;
+    width: 2px;
+    height: 30px;
+    background: black;
+}
+
+/* Message */
+.message {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 10px;
+    padding: 15px;
+    width: 200px;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+.message img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.message p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Animations */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-200%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .balloon-message {
+        animation: floatUp 8s linear infinite;
+    }
+
+    .balloon {
+        width: 80px;
+        height: 110px;
+    }
+
+    .message {
+        width: 150px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .balloon {
+        width: 70px;
+        height: 100px;
+    }
+
+    .message {
+        width: 120px;
+        font-size: 10px;
+    }
+}
